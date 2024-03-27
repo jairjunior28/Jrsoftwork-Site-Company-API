@@ -1,25 +1,12 @@
-import 'express-async-errors';
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express'
+import routes from './routes';
+import { errors } from 'celebrate';
 import cors from 'cors';
-import morgan from 'morgan';
-import helmet from 'helmet';
 
-const app = express();
-
-app.use(morgan('tiny'));
-
+const app= express();
 app.use(cors());
-
-app.use(helmet());
-
 app.use(express.json());
-
-app.use((req: Request, res: Response, next: NextFunction) => {
-    res.send("Hello World");
-})
-
-app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
-    res.status(500).send(error.message);
-})
+app.use(routes);
+app.use(errors);
 
 export default app;
