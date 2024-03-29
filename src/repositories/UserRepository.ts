@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import {Response, response} from 'express';
 export const prisma = new PrismaClient();
  
 async function connect() {
@@ -14,7 +15,16 @@ export function getUser(id: string) {
     return prisma.user.findUnique({
         where: { id }
     })
-}export function addUser(newUser: any) {
+}
+export async function addUser(newUser: any) {
+    const user = await prisma.user.findMany({
+        where: { email: newUser.email },
+      })
+      await console.log(user)
+      if(user.length>0)
+      return {message:'erron'}
+
+
     return prisma.user.create({
         data: newUser
     });

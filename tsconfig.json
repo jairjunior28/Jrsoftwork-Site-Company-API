@@ -19,7 +19,7 @@
     "node_modules"
   ],
   "lib": [
-    "es2015"
+    "es2016"
   ],
   "typeRoots": [
     "node_modules/@types"

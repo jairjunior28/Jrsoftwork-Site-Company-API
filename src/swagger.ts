@@ -4,7 +4,7 @@ const PORT = parseInt(`${process.env.PORT || 3000}`);
 const HOST= process.env.PORT?process.env.PORT:'localhost'
 const doc = {
     info: {
-        version: 'v1.0.0',
+        swagger: "2.23.7",
         title: 'Swagger Demo Project',
         description: 'Implementation of Swagger with TypeScript'
     },
