@@ -11,6 +11,23 @@
     "strict": true,
     "skipLibCheck": true
   },
+  "include": [
+    "src/swagger-output.json",
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "lib": [
+    "es2015"
+  ],
+  "typeRoots": [
+    "node_modules/@types"
+  ],
+  "types": [
+    "node",
+    "express"
+  ],
   "ts-node": { "transpileOnly": true }
 }
 // {
